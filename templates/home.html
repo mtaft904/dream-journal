@@ -1,27 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="blockquote text-center">
-        <h1 class="display-1">{% block title %} Dream Journal {% endblock %}</h1>
-    </div>
-    <hr>
-    <div class="text-center">
+<div class="blockquote text-center">
+    <h1 class="display-1">{% block title %} MyDreams {% endblock %}</h1>
+</div>
+<hr>
+<div class="text-center">
     <a href="{{ url_for('create') }}">
         <button class="btn btn-outline-dark">Create New Post</button>
     </a>
     {% for post in posts %}
-        <div class="card" style="margin-top:10pt;">
-            <div class="card-body">
-                <a href="{{ url_for('post', post_id=post['id']) }}">
-                    <h2 class="card-title">{{ post['title'] }}</h2>
-                </a>
-                <span class="card-subtitle mb-2 text-muted">{{ post['created'] }}</span>
-                <p class="card-text">{{ post['content'] }} </p>
-            </div>
+    <div class="card" style="margin-top:10pt;">
+        <div class="card-body">
+            <a href="{{ url_for('post', post_id=post['id']) }}">
+                <h2 class="card-title">{{ post['title'] }}</h2>
+            </a>
+            <span class="card-subtitle mb-2 text-muted">{{ post['created'] }}</span>
+            <p class="card-text">{{ post['content'] }} </p>
         </div>
-   {% endfor %}
     </div>
+    {% endfor %}
+</div>
 
 
 {% endblock %}
-    

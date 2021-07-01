@@ -1,0 +1,11 @@
+
+body {
+  background-image: url('bg.jpeg');
+  background-attachment: fixed;
+}
+
+.card {
+  opacity: 50%;
+  background-color: darkslateblue;
+  color: white;
+}
