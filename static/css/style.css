@@ -9,3 +9,8 @@ body {
   background-color: darkslateblue;
   color: white;
 }
+
+.display-1 {
+  color: white;
+  opacity: 50%;
+}

@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="{{ url_for('home') }}">Dream Journal</a>
+    <nav class="navbar navbar-expand-md navbar-dark mb-5">
+        <a class="navbar-brand mx-4 text-sm-center" href="{{ url_for('home') }}">home</a>
     </nav>
     <div class="container bg-image" style="background-image: url('background.jpeg')">
         {% for message in get_flashed_messages() %}
