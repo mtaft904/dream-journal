@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 class="display-2">{% block title %} {{ post['title'] }} {% endblock %}</h1>
-    <h6>Created on: <span class="badge bg-primary">{{ post['created'] }}</span></h6>
-    <hr>
-    <p>{{ post['content'] }}</p>
+<h1 class="display-2">{% block title %} {{ post['title'] }} {% endblock %}</h1>
+<h6>Created on: <span class="badge bg-primary">{{ post['created'] }}</span></h6>
+<form action="{{ url_for('delete', post_id=post['id']) }}" method='post'>
+    <button type="submit" class="btn btn-danger btn-sm"
+        onclick="return confirm('Are you sure you want to delete this?')">
+        Delete</button>
+</form>
+<a href="{{ url_for('edit', post_id=post['id']) }}">
+    <button class="btn btn-secondary btn-sm">Edit</button>
+</a>
+<hr>
+<p>{{ post['content'] }}</p>
 {% endblock %}
