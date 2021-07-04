@@ -13,8 +13,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark mb-5">
+    <nav class="navbar navbar-dark mb-5">
         <a class="navbar-brand mx-4 text-sm-center" href="{{ url_for('home') }}">home</a>
+        <a class="navbar-item mx-4 text-sm-center " href="{{ url_for('create') }}">
+            <button class="btn btn-lg btn-outline-light">Create New Post</button>
+        </a>
     </nav>
     <div class="container bg-image" style="background-image: url('background.jpeg')">
         {% for message in get_flashed_messages() %}

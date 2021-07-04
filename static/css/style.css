@@ -1,3 +1,10 @@
+:root {
+  --bg-color: #18111D;
+  --secondary-title: #A499B3;
+  --main-title: #D0BCD5;
+  --body-text: #E4F0D0;
+  --yellow: #F3C57A;
+}
 
 body {
   background-image: url('bg.jpeg');
@@ -5,12 +12,37 @@ body {
 }
 
 .card {
-  opacity: 50%;
   background-color: darkslateblue;
   color: white;
+  border-color: var(--bg-color);
 }
 
 .display-1 {
-  color: white;
-  opacity: 50%;
+  color: var(--main-title);
 }
+
+.card-title {
+  color: var(--main-title);
+}
+
+.card-subtitle {
+  color: var(--yellow);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+p {
+  color: var(--body-text);
+}
+
+.navbar-brand {
+  color: var(--secondary-title)!important;
+}
+
+h6{
+  color: var(--secondary-title);
+}
+
