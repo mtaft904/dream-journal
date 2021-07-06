@@ -14,10 +14,9 @@ body {
 .card {
   background-color: darkslateblue;
   color: white;
-  border-color: var(--bg-color);
 }
 
-.display-1 {
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
   color: var(--main-title);
 }
 
@@ -34,7 +33,7 @@ a {
   text-decoration: none;
 }
 
-p {
+p, .p {
   color: var(--body-text);
 }
 
@@ -46,3 +45,13 @@ h6{
   color: var(--secondary-title);
 }
 
+.title {
+  background-color: inherit;
+  border: none;
+  color: var(--body-text);
+}
+
+.content {
+  background-color: inherit;
+  border: none;
+}

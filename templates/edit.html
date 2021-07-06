@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="display-2">{% block title %}Edit Entry{% endblock %}</h1>
+<h1 class="display-3">{% block title %}Edit Entry{% endblock %}</h1>
 <hr>
 <form method="POST">
-  <div class="form-group mb-3">
-    <label for="title" class="form-label">Title</label>
-    <input type="text" name="title" placeholder="Title" class="form-control" value="{{ post['title'] }}"></input>
+  <div class="form-group mb-3 align-items-start">
+    <label for="title" class="display-6 me-3 align-top py-2">Title:</label>
+    <textarea name="title" role="input"
+      class=" align-top input title px-4 flex-grow-1 display-5">{{ post['title'] }}</textarea>
   </div>
-  <div class="form-group mb-3">
-    <label for="content" class="form-label">Content</label>
-    <textarea type="text" name="content" class="form-control" style="height: 200pt">{{ post['content'] }}</textarea>
+  <div class="form-group mb-3 d-flex flex-column">
+    <label for="content" class="display-6 me-3 mb-3">Content</label>
+    <textarea name="content" role="input" class="input content mb-5 p lead" contenteditable>{{ post['content']
+      }}</textarea>
   </div>
-  <button type="submit" class="btn btn-outline-primary">Submit</button>
+  <button type="submit" class="btn btn-md btn-outline-light px-4">Submit</button>
 </form>
 {% endblock %}

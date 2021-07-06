@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-dark mb-5">
         <a class="navbar-brand mx-4 text-sm-center" href="{{ url_for('home') }}">home</a>
-        <a class="navbar-item mx-4 text-sm-center " href="{{ url_for('create') }}">
+        <a class="navbar-item mx-4 text-sm-center m-2" href="{{ url_for('create') }}">
             <button class="btn btn-lg btn-outline-light">Create New Post</button>
         </a>
     </nav>
@@ -23,8 +23,15 @@
         {% for message in get_flashed_messages() %}
         <div class="alert alert-danger">{{message}}</div>
         {% endfor %}
-        {% block content %} {% endblock %}
+        <div class="row justify-content-center">
+            <div class="col col-lg-6">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
     </div>
+    <footer style="padding: 50px;margin-top: 50px; text-align: center;">
+        <h6>Created by Madeleine Taft, 2021</h6>
+    </footer>
 
 
     <!-- Optional JavaScript -->

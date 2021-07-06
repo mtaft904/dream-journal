@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="display-1">{% block title %} {{ post['title'] }} {% endblock %}</h1>
-<h6>Created on: <span>{{ post['created'] }}</span></h6>
-<form action="{{ url_for('delete', post_id=post['id']) }}" method='post'>
-    <button type="submit" class="btn btn-danger btn-sm"
-        onclick="return confirm('Are you sure you want to delete this?')">
-        Delete</button>
-</form>
-<a href="{{ url_for('edit', post_id=post['id']) }}">
-    <button class="btn btn-secondary btn-sm">Edit</button>
-</a>
+<h1 class="display-3">{% block title %} {{ post['title'] }} {% endblock %}</h1>
+<h6 class="mb-3">Created on: <span>{{ post['created'] }}</span></h6>
+<div class="d-flex">
+    <a href="{{ url_for('edit', post_id=post['id']) }}">
+        <button class="btn btn-md btn-outline-light me-2" style="width: 200px">Edit</button>
+    </a>
+    <form action="{{ url_for('delete', post_id=post['id']) }}" method='post'>
+        <button type="submit" class="btn btn-danger btn-md me-2"
+            onclick="return confirm('Are you sure you want to delete this?')">
+            Delete</button>
+    </form>
+</div>
 <hr>
-<p>{{ post['content'] }}</p>
+<p class="lead">{{ post['content'] }}</p>
 {% endblock %}
