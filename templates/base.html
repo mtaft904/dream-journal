@@ -20,11 +20,12 @@
         </a>
     </nav>
     <div class="container bg-image" style="background-image: url('background.jpeg')">
-        {% for message in get_flashed_messages() %}
-        <div class="alert alert-danger">{{message}}</div>
-        {% endfor %}
-        <div class="row justify-content-center">
+
+        <div class="row justify-content-center" style="height: 500px">
             <div class="col col-lg-6">
+                {% for message in get_flashed_messages() %}
+                <div class="alert alert-danger">{{message}}</div>
+                {% endfor %}
                 {% block content %} {% endblock %}
             </div>
         </div>

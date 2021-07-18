@@ -4,17 +4,17 @@
 <h1 class="display-2">{% block title %}Create New Entry{% endblock %}</h1>
 <hr>
 <form method="POST">
-    <div class="form-group mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input type="text" name="title" placeholder="Post title" class="form-control"
-            value="{{ request.form['title'] }}">
+    <div class="form-group mb-3 align-items-start">
+        <label for="title" class="display-6 me-3 align-top py-2">Title</label>
+        <textarea name="title" role="input" class=" align-top input title px-4 flex-grow-1 display-5"
+            placeholder="Add a title!"></textarea>
         </input>
     </div>
-    <div class="form-group mb-3">
-        <label for="content" class="form-label">Content</label>
-        <textarea type="text" name="content" placeholder="Write something here" class="form-control"
-            style="height: 200pt">{{ request.form['content'] }}</textarea>
+    <div class="form-group mb-3 d-flex flex-column">
+        <label for="content" class="display-6 me-3 mb-3">Content</label>
+        <textarea type="text" name="content" placeholder="Write something here"
+            class="input content mb-5 p lead">{{ request.form['content'] }}</textarea>
     </div>
-    <button type="submit" class="btn btn-outline-primary">Submit</button>
+    <button type="submit" class="btn btn-light" style="opacity:75%">Submit</button>
 </form>
 {% endblock %}

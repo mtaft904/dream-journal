@@ -8,6 +8,13 @@
 </div>
 <hr>
 
+{% if not posts %}
+<div style="padding: 30px;" class="p lead text-center">No Dreams Yet</div>
+{% else %}
+<form action="/" method="post" class="mx-3">
+    <button class="btn btn-light" name="toggle-order" type="submit" style="opacity: 75%;"> ^ {{ order }}</button>
+</form>
+{% endif %}
 {% for post in posts %}
 <div class="card" style="margin-top:10pt;background:inherit">
     <div class="card-body">

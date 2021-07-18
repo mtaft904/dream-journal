@@ -18,16 +18,33 @@ def get_post(post_id):
     return post
 
 
+def format_order(order):
+    if order:
+        return "Newest"
+    else:
+        return "Oldest"
+
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "ziopn4rlsdfu983n"
 
 
-@app.route("/")
+newest_first = True
+
+
+@app.route("/", methods=("GET", "POST"))
 def home():
+    global newest_first
+    if request.method == "POST":
+        newest_first = not newest_first
+    order = newest_first
     conn = get_db_connection()
-    posts = conn.execute("SELECT * FROM posts").fetchall()
+    if newest_first:
+        posts = conn.execute("SELECT * FROM posts ORDER BY created DESC").fetchall()
+    else:
+        posts = conn.execute("SELECT * FROM posts").fetchall()
     conn.close()
-    return render_template("home.html", posts=posts)
+    return render_template("home.html", posts=posts, order=format_order(order))
 
 
 @app.route("/<int:post_id>")

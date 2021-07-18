@@ -41,7 +41,7 @@ p, .p {
   color: var(--secondary-title)!important;
 }
 
-h6{
+h6, .h6{
   color: var(--secondary-title);
 }
 
