@@ -3,11 +3,11 @@ A simple flask app to record your dreams!
 
 
 ## Install
-Make sure you have python downloaded by running `$ python3 --version`.
+Make sure you have python3 downloaded by running `$ python3 --version`.
 
 Clone or download the Repo and navigate into the directory in your terminal
 ```
-$ git clone xxx
+$ git clone https://github.com/mtaft904/dream-journal.git
 $ cd dream-journal
 ```
 
